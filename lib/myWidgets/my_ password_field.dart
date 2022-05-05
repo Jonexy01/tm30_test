@@ -29,6 +29,12 @@ class MyPasswordField extends StatelessWidget {
             Icons.visibility, 
             color: Colors.black,
           ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              width: 1,
+              color: Colors.black,
+            )
+          )
           //border: InputBorder.none,
         ),
       ),
