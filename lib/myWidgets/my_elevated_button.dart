@@ -4,13 +4,13 @@ class MyElevatedTextButton extends StatelessWidget {
 
   final String text;
   final VoidCallback press;
-  final Color color, textColor;
+  final Color? color, textColor;
   
   const MyElevatedTextButton({
     Key? key,
     required this.text,
     required this.press,
-    this.color = Colors.purple,
+    this.color,
     this.textColor = Colors.white,
   }) : super(key: key);
 
@@ -18,15 +18,16 @@ class MyElevatedTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Container(
+      height: 50,
       margin: EdgeInsets.symmetric(vertical: 10),
-      width: size.width * 0.8,
+      width: size.width * 0.73,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(29),
+        //borderRadius: BorderRadius.circular(5),
         child: TextButton(
           style: ButtonStyle(
             padding: MaterialStateProperty.all(EdgeInsets.symmetric(
                 vertical: 20, 
-                horizontal: 40,
+                horizontal: 30,
               ),
             ),
             backgroundColor: MaterialStateProperty.all(color)
@@ -35,7 +36,7 @@ class MyElevatedTextButton extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-              letterSpacing: 5,
+              letterSpacing: 1,
               color: textColor,
             ),
           ),

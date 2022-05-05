@@ -15,10 +15,29 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: 20,
+              height: 100,
             ),
-            Text('Set up your password'),
-            Text('Enter your details to log into your account'),
+            Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Set up your password',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text('Enter your details to log into your account'),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
             MyPasswordField(
                   passwordText: 'New Password',
                   onChanged: ((value) {
@@ -31,10 +50,14 @@ class MyHomePage extends StatelessWidget {
                     //password = value;
                   }),
             ),
+            SizedBox(
+              height: 70,
+            ),
             MyElevatedTextButton(
-                text: 'Sign up', 
+                color: Colors.blue.shade900,
+                text: 'Set Password', 
                 press: () async {
-                  Navigator.pushReplacementNamed(context, 'pages/login');  
+                  Navigator.pushReplacementNamed(context, '/login');  
                 }
             ),
             Spacer(),
