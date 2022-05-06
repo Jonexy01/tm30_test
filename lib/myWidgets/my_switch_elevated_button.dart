@@ -29,7 +29,7 @@ class SwitchElevatedButton extends StatelessWidget {
         child: Text(
           text!,
           style: TextStyle(
-            color: textColor ?? Colors.white,
+            color: textColor,
           ),
         ),
       ),
